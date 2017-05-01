@@ -63,7 +63,6 @@ feature "Sign up" do
   end
 end
 
-
 feature "sign out" do
   # As an authenticated user
   # I want to sign out
