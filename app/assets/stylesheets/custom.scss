@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+$lightblue: #dbecec;
+
+
+body {
+  background: image-url("pexels-photo-305937.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: $lightblue;
+  font-family: 'Lato', sans-serif;
+  font-size: 8em;
+}
