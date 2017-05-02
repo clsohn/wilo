@@ -24,6 +24,8 @@ group :development, :test do
   gem 'shoulda'
   gem 'valid_attribute'
   gem 'coveralls', require: false
+  gem 'dotenv-rails'
+  gem 'database_cleaner'
 end
 
 group :production do
