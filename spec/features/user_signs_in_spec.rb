@@ -11,7 +11,7 @@ feature "Sign up" do
     fill_in 'First Name', with: 'Lynn'
     fill_in 'Last Name', with: 'Simpson'
     fill_in 'Password', with: 'password123'
-    fill_in 'Password Confirmation', with: 'password123'
+    fill_in 'Password confirmation', with: 'password123'
     fill_in 'Email', with: 'lsimpson@yahoo.com'
     click_button 'Sign Up'
 
@@ -38,7 +38,7 @@ feature "Sign up" do
     fill_in 'First Name', with: 'Lynn'
     fill_in 'Last Name', with: 'Simpson'
     fill_in 'Password', with: '123'
-    fill_in 'Password Confirmation', with: '321'
+    fill_in 'Password confirmation', with: '321'
     fill_in 'Email', with: 'lsimpson@yhoos'
     click_button 'Sign Up'
 
@@ -55,7 +55,7 @@ feature "Sign up" do
     fill_in 'First Name', with: user.first_name
     fill_in 'Last Name', with: user.last_name
     fill_in 'Password', with: user.password
-    fill_in 'Password Confirmation', with: user.password
+    fill_in 'Password confirmation', with: user.password
     fill_in 'Email', with: user.email
     click_button 'Sign Up'
 
