@@ -12,7 +12,8 @@ class Api::V1::UsersController < ApplicationController
       UsersLocation.new(user: user, location: location)
       render json: {
         status: 201,
-        message: "Update successful"
+        message: "Update successful",
+        user_id: user.id
       }.to_json
     else
       render json: {

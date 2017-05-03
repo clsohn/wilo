@@ -85,7 +85,8 @@ handleSendForm(payload){
   })
   .then(response => response.json())
   .then(parsed => {
-    console.log(parsed.message);
+    console.log(parsed.user_id);
+    window.location.href = `/users/${parsed.user_id}`;
   });
 }
 
@@ -138,7 +139,7 @@ handleSendForm(payload){
                 handlerFunction={this.handleCommuteTwoEndChange}
             />
 
-        <input type="submit" className="button" value="Submit "/>
+        <input type="submit" className="button" value="Submit"/>
       </form>
     )
   }

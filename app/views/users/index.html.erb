@@ -1,1 +1,8 @@
-    <div class="title">What's it like out?</div>
+<div class="title">What's it like out?</div>
+
+<% if user_signed_in? %>
+  <p>Don't see a message? Enter your <%= link_to "Profile Info", new_location_path  %> </p>
+  <div class="message">
+    <h4>You can't leave the house without and umbrella!</h4>
+  </div>
+<% end %>
