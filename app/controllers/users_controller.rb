@@ -5,7 +5,13 @@ before_action :authorize_user, only: [:edit, :update, :show]
     @users = User.all
   end
 
-  def edit
+  def show
     @user = User.find(params[:id])
+  end
+
+  def authorize_user
+    if !user_signed_in?
+      raise ActionController::RoutingError.new("Not Found")
+    end
   end
 end
