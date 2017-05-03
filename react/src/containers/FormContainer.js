@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
 import TextField from '../components/TextField';
-import Select from '../components/Select';
 
 class FormContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      firstName: '',
-      lastName: '',
-      email: '',
+      zip: '',
       phoneNumber: '',
       commuteOneStart: '',
       commuteOneEnd: '',
@@ -16,28 +13,34 @@ class FormContainer extends Component {
       commuteTwoEnd: ''
     }
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
-    this.handleFirstNameChange = this.handleFirstNameChange.bind(this);
-    this.handleLastNameChange = this.handleLastNameChange.bind(this);
-    this.handleEmailChange = this.handleEmailChange.bind(this);
+    this.handleZipChange = this.handleZipChange.bind(this);
     this.handlePhoneNumberChange = this.handlePhoneNumberChange.bind(this);
     this.handleCommuteOneStartChange = this.handleCommuteOneStartChange.bind(this);
     this.handleCommuteOneEndChange = this.handleCommuteOneEndChange.bind(this);
     this.handleCommuteTwoStartChange = this.handleCommuteTwoStartChange.bind(this);
     this.handleCommuteTwoEndChange = this.handleCommuteTwoEndChange.bind(this);
+    this.handleSendForm = this.handleSendForm.bind(this);
   }
 
-
-
-handleFirstNameChange(event) {
-  this.setState({firstName: event.target.value })
+handleFormSubmit(event) {
+  event.preventDefault();
+  {
+    let formPayload = {
+      profile: {
+        zip: this.state.zip,
+        phoneNumber: this.state.phoneNumber,
+        commuteOneStart: this.state.commuteOneStart,
+        commuteOneEnd: this.state.commuteOneEnd,
+        commuteTwoStart: this.state.commuteTwoStart,
+        commuteTwoEnd: this.state.commuteTwoEnd
+      }};
+    this.handleSendForm(formPayload);
+    this.handleClearForm(event);
+  }
 }
 
-handleLastNameChange(event) {
-  this.setState({lastName: event.target.value})
-}
-
-handleEmailChange(event) {
-  this.setState({email: event.target.value})
+handleZipChange(event) {
+  this.setState({zip: event.target.value})
 }
 
 handlePhoneNumberChange(event) {
@@ -64,9 +67,7 @@ handleClearForm(event){
   event.preventDefault();
   this.setState({
     error: {},
-    firstName: '',
-    lastName: '',
-    email: '',
+    zip: '',
     phoneNumber: '',
     commuteOneStart: '',
     commuteOneEnd: '',
@@ -75,6 +76,18 @@ handleClearForm(event){
     })
   }
 
+handleSendForm(payload){
+  fetch('/api/v1/users', {
+  credentials: 'include',
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json'},
+  body: JSON.stringify(payload)
+  })
+  .then(response => response.json())
+  .then(parsed => {
+    console.log(parsed.message)
+  })
+}
 
   render() {
 
@@ -84,22 +97,10 @@ handleClearForm(event){
         <h1>Your Profile Info</h1>
 
         <TextField
-            content={this.state.firstName}
-            label='First Name:'
-            name='firstName'
-            handlerFunction={this.handleFirstNameChange}
-          />
-        <TextField
-            content={this.state.lastName}
-            label='Last Name:'
-            name='lastName'
-            handlerFunction={this.handleLastNameChange}
-          />
-        <TextField
-            content={this.state.email}
-            label='Email:'
-            name='email'
-            handlerFunction={this.handleEmailChange}
+            content={this.state.zip}
+            label='Zip Code:'
+            name='zip'
+            handlerFunction={this.handleZipChange}
           />
 
         <TextField
