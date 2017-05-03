@@ -11,7 +11,7 @@ class FormContainer extends Component {
       commuteOneEnd: '',
       commuteTwoStart: '',
       commuteTwoEnd: ''
-    }
+    };
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.handleZipChange = this.handleZipChange.bind(this);
     this.handlePhoneNumberChange = this.handlePhoneNumberChange.bind(this);
@@ -40,27 +40,27 @@ handleFormSubmit(event) {
 }
 
 handleZipChange(event) {
-  this.setState({zip: event.target.value})
+  this.setState({zip: event.target.value});
 }
 
 handlePhoneNumberChange(event) {
-  this.setState({phoneNumber: event.target.value})
+  this.setState({phoneNumber: event.target.value});
 }
 
 handleCommuteOneStartChange(event) {
-  this.setState({commuteOneStart: event.target.value})
+  this.setState({commuteOneStart: event.target.value});
 }
 
 handleCommuteOneEndChange(event) {
-  this.setState ({commuteOneEnd: event.target.value})
+  this.setState ({commuteOneEnd: event.target.value});
 }
 
 handleCommuteTwoStartChange(event) {
-  this.setState ({commuteTwoStart: event.target.value})
+  this.setState ({commuteTwoStart: event.target.value});
 }
 
 handleCommuteTwoEndChange(event) {
-  this.setState ({commuteTwoEnd: event.target.value})
+  this.setState ({commuteTwoEnd: event.target.value});
 }
 
 handleClearForm(event){
@@ -73,7 +73,7 @@ handleClearForm(event){
     commuteOneEnd: '',
     commuteTwoStart: '',
     commuteTwoEnd: ''
-    })
+   });
   }
 
 handleSendForm(payload){
@@ -85,8 +85,8 @@ handleSendForm(payload){
   })
   .then(response => response.json())
   .then(parsed => {
-    console.log(parsed.message)
-  })
+    console.log(parsed.message);
+  });
 }
 
   render() {
