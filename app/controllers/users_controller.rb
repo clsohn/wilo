@@ -3,6 +3,7 @@ before_action :authorize_user, only: [:edit, :update, :show]
 
   def index
     @users = User.all
+    @weather = Weather.new(@hour, @temp, @condition, @wspd, @humidity, @snow)
   end
 
   def show
