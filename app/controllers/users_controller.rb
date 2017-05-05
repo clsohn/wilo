@@ -4,9 +4,6 @@ before_action :authorize_user, only: [:edit, :update, :show]
   def index
     @users = User.all
     @weather = Weather.new(@hour, @temp, @condition, @wspd, @humidity, @snow)
-    url = 'http://api.wunderground.com/api/ce0783e06625adc3/hourly/q/MA/Boston.json'
-    data = JSON.parse(open(url).read)
-    binding.pry
   end
 
   def show

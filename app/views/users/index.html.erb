@@ -3,6 +3,6 @@
 <% if user_signed_in? %>
   <h4>Don't see a message? Enter your <%= link_to "Profile Info", new_location_path  %> </h4>
   <div class="message">
-    <h2>thing</h2>
+    <h2> <%= @weather.fetch %> </h2>
   </div>
 <% end %>

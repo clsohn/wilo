@@ -10,36 +10,13 @@ class Weather
     @snow = snow
   end
 
-  def times
-    users.commute_one_start
+  def fetch
+    response = HTTParty.get('http://api.wunderground.com/api/ce0783e06625adc3/hourly/q/MA/Boston.json')
+    data = response.parsed_response
+    @temp = data["hourly_forecast"][0]["temp"]["english"]
+    @condition = data["hourly_forecast"][0]["condition"]
+    @wspd = data["hourly_forecast"][0]["wspd"]["english"]
+    @humidity = data["hourly_forecast"][0]["humidity"]
+    @snow = data["hourly_forecast"][0]["snow"]["english"]
   end
-
-  def location
-
-  end
-
-  # # def fetch
-  #   body = fetch('http://api.wunderground.com/api/ce0783e06625adc3/hourly/q/MA/Boston.json')
-  #   binding.pry
-  # #     .then(response => {
-  #       if (response.ok) {
-  #         return response;
-  #       } else {
-  #         let errorMessage = `${response.status} (${response.statusText})`,
-  #             error = new Error(errorMessage);
-  #         throw(error);
-  #       }
-  #     })
-  #     .then(response => response.json())
-  #     .then(body => {
-  #       console.log(body);
-  #       @hour = body.hourly_forecast[0].FCTTIME.hour;
-  #       @temp = body.hourly_forecast[0].temp.english;
-  #       @condition = body.hourly_forecast[0].condition;
-  #       @wspd = body.hourly_forecast[0].wspd.english;
-  #       @humidity = body.hourly_forecast[0].humidity;
-  #       @snow = body.hourly_forecast[0].snow.english;
-  #       })
-  #     .catch(error => console.error(`Error in fetch: ${error.message}`));
-  # end
 end
