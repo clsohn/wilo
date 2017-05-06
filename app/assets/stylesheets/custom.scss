@@ -3,6 +3,8 @@
 
 $lightblue: #dbecec;
 $darkslategrey: #2b3149;
+$navajowhite: rgba(211, 155, 104, 0.8);
+$navajowhitetransparent: rgba(211, 155, 104, 0.5);
 
 body {
   background: image-url("pexels-photo-305937.jpg") no-repeat center center fixed;
@@ -15,7 +17,8 @@ p {
   padding: 1em;
 }
 
-.notice, .alert {
+.notice,
+.alert {
   color: $lightblue;
   margin: 0;
   padding: 0;
@@ -35,18 +38,20 @@ p {
   font-size: 25px;
 }
 
-h1, .alert {
+h1,
+.alert {
   color: $lightblue;
   font-weight: bold;
 }
 
-h2, h3 {
+h2,
+h3 {
   color: $lightblue;
-  font-weight: bold;
   font-family: 'Poppins', sans_serif;
+  font-weight: bold;
 }
 
-.sign-header{
+.sign-header {
   font-family: 'Lato', sans-serif;
 }
 
@@ -71,14 +76,14 @@ a {
   margin: auto;
 }
 
-.blockHead {
-  background: rgba(211, 155, 104, 0.8);
+.blockhead {
+  background: $navajowhite;
   padding: 20px;
   text-align: left;
 }
 
-.blockBody {
-  background: rgba(211, 155, 104, 0.5);
+.blockbody {
+  background: $navajowhitetransparent;
   color: $lightblue;
   margin: 0;
   padding: 35px;
