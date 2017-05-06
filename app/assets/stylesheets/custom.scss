@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Poppins');
 
 $lightblue: #dbecec;
 $darkslategrey: #2b3149;
@@ -6,6 +7,18 @@ $darkslategrey: #2b3149;
 body {
   background: image-url("pexels-photo-305937.jpg") no-repeat center center fixed;
   background-size: cover;
+}
+
+p {
+  color: $darkslategrey;
+  font-size: 1em;
+  padding: 1em;
+}
+
+.notice, .alert {
+  color: $lightblue;
+  margin: 0;
+  padding: 0;
 }
 
 .title {
@@ -22,9 +35,19 @@ body {
   font-size: 25px;
 }
 
-h1, h2 {
+h1, .alert {
   color: $lightblue;
   font-weight: bold;
+}
+
+h2, h3 {
+  color: $lightblue;
+  font-weight: bold;
+  font-family: 'Poppins', sans_serif;
+}
+
+.sign-header{
+  font-family: 'Lato', sans-serif;
 }
 
 label,
@@ -38,3 +61,33 @@ a {
   color: $lightblue;
   font-size: 20px;
 }
+
+.jumbotron {
+  text-align: center;
+}
+
+.container {
+  display: inline-block;
+  margin: auto;
+}
+
+.blockHead {
+  background: rgba(211, 155, 104, 0.8);
+  padding: 20px;
+  text-align: left;
+}
+
+.blockBody {
+  background: rgba(211, 155, 104, 0.5);
+  color: $lightblue;
+  margin: 0;
+  padding: 35px;
+  text-align: center;
+}
+
+.form-box {
+  background-color: transparent;
+  margin: 2% 25%;
+  padding: 2em;
+  width: 50%;
+ }

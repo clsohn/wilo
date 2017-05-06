@@ -13,12 +13,11 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
     <div class="top-bar">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
       <div class="top-bar-right">
-          <ul class="menu vertical">
+          <ul class="menu horizontal">
             <% if user_signed_in? %>
               <li>
                 <%= link_to "Hi #{current_user.first_name}",

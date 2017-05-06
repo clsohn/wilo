@@ -2,7 +2,14 @@
 
 <% if user_signed_in? %>
   <p>Don't see a message? Enter your <%= link_to "Profile Info", new_location_path  %> </p>
-  <div class="message">
-    <h4>You can't leave the house without and umbrella!</h4>
+  <div class="jumbotron">
+    <div class="container">
+      <div class="blockHead">
+        <h3></h3>
+      </div>
+      <div class="blockBody">
+        <h2>You can't leave the house without and umbrella!</h2>
+      </div>
+    </div>
   </div>
 <% end %>
