@@ -1,11 +1,11 @@
-<h1>Welcome <%= current_user.first_name %> !</h1>
-<h2>See today's  <%= link_to "recommendation", root_path %></h2>
+<h1 class="title">What's it like out?</h1>
+<h2> See today's <%= link_to "recommendation", root_path %> for <%= current_user.first_name %></h2>
 <div class="jumbotron">
   <div class="container">
-    <div class="blockHead">
+    <div class="blockhead">
       <h3>Your current location</h3>
     </div>
-    <div class="blockBody">
+    <div class="blockbody">
       <h2>Boston MA</h2>
     </div>
   </div>

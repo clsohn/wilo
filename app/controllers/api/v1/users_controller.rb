@@ -3,12 +3,8 @@ class Api::V1::UsersController < ApplicationController
 
   def create
     user = current_user
-    location = Location.find_or_create_by(zip: fetch_params['zip'])
-    if user.update(phone_number: fetch_params['phoneNumber'],
-                  commute_one_start: fetch_params['commuteOneStart'],
-                  commute_one_end: fetch_params['commuteOneEnd'],
-                  commute_two_start: fetch_params['commuteTwoStart'],
-                  commute_two_end: fetch_params['commuteTwoEnd'])
+    location = Location.find_or_create_by(city: fetch_params['city'], state: fetch_params['homeState'], zip: fetch_params['zip'])
+    if user.update(phone_number: fetch_params['phoneNumber'])
       UsersLocation.new(user: user, location: location)
       render json: {
         status: 201,
@@ -26,6 +22,6 @@ class Api::V1::UsersController < ApplicationController
   private
 
   def fetch_params
-    params.require(:profile).permit(:zip, :phoneNumber, :commuteOneStart, :commuteOneEnd, :commuteTwoStart, :commuteTwoEnd)
+    params.require(:profile).permit(:city, :homeState, :zip, :phoneNumber)
   end
 end

@@ -1,7 +1,6 @@
 <div class="title">What's it like out?</div>
-
+<h2>Be prepared for the day's weather</h2>
 <% if user_signed_in? %>
-  <p>Don't see a message? Enter your <%= link_to "Profile Info", new_location_path  %> </p>
   <div class="jumbotron">
     <div class="container">
       <div class="blockhead">
@@ -12,4 +11,5 @@
       </div>
     </div>
   </div>
+<div class="instruction">Don't see a message? Enter your <%= link_to "Profile Info", new_location_path  %> </div>
 <% end %>
