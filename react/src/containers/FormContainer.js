@@ -5,20 +5,17 @@ class FormContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      city: '',
+      homeState: '',
       zip: '',
       phoneNumber: '',
-      commuteOneStart: '',
-      commuteOneEnd: '',
-      commuteTwoStart: '',
-      commuteTwoEnd: ''
+
     };
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
+    this.handleCityChange = this.handleCityChange.bind(this);
+    this.handleHomeStateChange = this.handleHomeStateChange.bind(this);
     this.handleZipChange = this.handleZipChange.bind(this);
     this.handlePhoneNumberChange = this.handlePhoneNumberChange.bind(this);
-    this.handleCommuteOneStartChange = this.handleCommuteOneStartChange.bind(this);
-    this.handleCommuteOneEndChange = this.handleCommuteOneEndChange.bind(this);
-    this.handleCommuteTwoStartChange = this.handleCommuteTwoStartChange.bind(this);
-    this.handleCommuteTwoEndChange = this.handleCommuteTwoEndChange.bind(this);
     this.handleSendForm = this.handleSendForm.bind(this);
   }
 
@@ -27,16 +24,22 @@ handleFormSubmit(event) {
   {
     let formPayload = {
       profile: {
+        city: this.state.city,
+        homeState: this.state.homeState,
         zip: this.state.zip,
-        phoneNumber: this.state.phoneNumber,
-        commuteOneStart: this.state.commuteOneStart,
-        commuteOneEnd: this.state.commuteOneEnd,
-        commuteTwoStart: this.state.commuteTwoStart,
-        commuteTwoEnd: this.state.commuteTwoEnd
+        phoneNumber: this.state.phoneNumber
       }};
     this.handleSendForm(formPayload);
     this.handleClearForm(event);
   }
+}
+
+handleCityChange(event) {
+  this.setState({city: event.target.value});
+}
+
+handleHomeStateChange(event) {
+  this.setState ({homeState: event.target.value});
 }
 
 handleZipChange(event) {
@@ -47,32 +50,15 @@ handlePhoneNumberChange(event) {
   this.setState({phoneNumber: event.target.value});
 }
 
-handleCommuteOneStartChange(event) {
-  this.setState({commuteOneStart: event.target.value});
-}
-
-handleCommuteOneEndChange(event) {
-  this.setState ({commuteOneEnd: event.target.value});
-}
-
-handleCommuteTwoStartChange(event) {
-  this.setState ({commuteTwoStart: event.target.value});
-}
-
-handleCommuteTwoEndChange(event) {
-  this.setState ({commuteTwoEnd: event.target.value});
-}
 
 handleClearForm(event){
   event.preventDefault();
   this.setState({
     error: {},
+    city: '',
+    homeState: '',
     zip: '',
     phoneNumber: '',
-    commuteOneStart: '',
-    commuteOneEnd: '',
-    commuteTwoStart: '',
-    commuteTwoEnd: ''
    });
   }
 
@@ -95,7 +81,21 @@ handleSendForm(payload){
     return (
       <form id="profile-form" onSubmit={this.handleFormSubmit}>
 
-        <h1>Your Profile Info</h1>
+        <h1> id="profile-head">Your Profile Info</h1>
+
+        <TextField
+            content={this.state.city}
+            label='City:'
+            name='city'
+            handlerFunction={this.handleCityChange}
+        />
+
+        <TextField
+            content={this.state.homeState}
+            label='State:'
+            name='homeState'
+            handlerFunction={this.handleHomeStateChange}
+        />
 
         <TextField
             content={this.state.zip}
@@ -111,33 +111,6 @@ handleSendForm(payload){
             handlerFunction={this.handlePhoneNumberChange}
           />
 
-          <TextField
-              content={this.state.commuteOneStart}
-              label='Commute Start Time:'
-              name='commuteOneStart'
-              handlerFunction={this.handleCommuteOneStartChange}
-          />
-
-          <TextField
-              content={this.state.commuteOneEnd}
-              label='Commute End Time:'
-              name='commuteOneEnd'
-              handlerFunction={this.handleCommuteOneEndChange}
-          />
-
-          <TextField
-              content={this.state.commuteTwoStart}
-              label='Additional Commute Start Time:'
-              name='commuteTwoStart'
-              handlerFunction={this.handleCommuteTwoStartChange}
-          />
-
-            <TextField
-                content={this.state.commuteTwoEnd}
-                label='Additional Commute End Time:'
-                name='commuteTwoEnd'
-                handlerFunction={this.handleCommuteTwoEndChange}
-            />
 
         <input type="submit" className="button" value="Submit"/>
       </form>

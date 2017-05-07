@@ -12,8 +12,8 @@ class Message
   end
 
   def middle
-    if @weather.temp.to_i > 20 && @weather.temp.to_i < 85
-       return "Not much to say here"
+    if @weather.temp.to_i > 45 && @weather.temp.to_i < 70
+      return "It's pretty mild out actually, probably just need a light jacket"
     end
   end
 

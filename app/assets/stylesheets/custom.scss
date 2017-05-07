@@ -5,6 +5,9 @@ $lightblue: #dbecec;
 $darkslategrey: #2b3149;
 $navajowhite: rgba(211, 155, 104, 0.8);
 $navajowhitetransparent: rgba(211, 155, 104, 0.5);
+$brown: rgba(132, 103, 91, 0.8);
+$browntransparent: rgba(132, 103, 91, 0.5);
+$white: #fff;
 
 body {
   background: image-url("pexels-photo-305937.jpg") no-repeat center center fixed;
@@ -30,6 +33,7 @@ p {
   font-size: 8em;
   font-style: italic;
   font-weight: bold;
+  text-align: center;
 }
 
 .top-bar {
@@ -38,10 +42,10 @@ p {
   font-size: 25px;
 }
 
-h1,
-.alert {
+h1 {
   color: $lightblue;
   font-weight: bold;
+  text-align: center;
 }
 
 h2,
@@ -49,6 +53,15 @@ h3 {
   color: $lightblue;
   font-family: 'Poppins', sans_serif;
   font-weight: bold;
+  margin: 0 1em;
+  text-align: center;
+}
+
+.instruction {
+  color: $brown;
+  font-size: 1.5em;
+  margin: 0 1em;
+  text-align: center;
 }
 
 .sign-header {
@@ -62,12 +75,14 @@ a {
   font-size: 1em;
 }
 
-.notice {
+.notice,
+.alert  {
   color: $lightblue;
   font-size: 20px;
 }
 
 .jumbotron {
+  margin: 4em;
   text-align: center;
 }
 
@@ -77,16 +92,16 @@ a {
 }
 
 .blockhead {
-  background: $navajowhite;
+  background: $brown;
   padding: 20px;
   text-align: left;
 }
 
 .blockbody {
-  background: $navajowhitetransparent;
-  color: $lightblue;
+  background: $browntransparent;
+  color: $white;
   margin: 0;
-  padding: 35px;
+  padding: 45px;
   text-align: center;
 }
 
@@ -96,3 +111,13 @@ a {
   padding: 2em;
   width: 50%;
  }
+
+#profile-form,
+#profile-head {
+  font-family: 'Lato',sans-serif;
+}
+
+.button,
+input {
+  background-color: $navajowhite;
+}
