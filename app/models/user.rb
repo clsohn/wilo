@@ -4,7 +4,8 @@ class User < ApplicationRecord
   validates :email, presence: true,
     uniqueness: { message: "An account already exists for that email address!" }
 
-  has_many :locations
+  has_many :users_locations
+  has_many :locations, through: :users_locations
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
