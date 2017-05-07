@@ -81,7 +81,7 @@ handleSendForm(payload){
     return (
       <form id="profile-form" onSubmit={this.handleFormSubmit}>
 
-        <h1> id="profile-head">Your Profile Info</h1>
+        <h1 id="profile-head">Your Profile Info</h1>
 
         <TextField
             content={this.state.city}

@@ -8,6 +8,7 @@ $navajowhitetransparent: rgba(211, 155, 104, 0.5);
 $brown: rgba(132, 103, 91, 0.8);
 $browntransparent: rgba(132, 103, 91, 0.5);
 $white: #fff;
+$black: #000000;
 
 body {
   background: image-url("pexels-photo-305937.jpg") no-repeat center center fixed;
@@ -15,7 +16,7 @@ body {
 }
 
 p {
-  color: $darkslategrey;
+  color: $black;
   font-size: 1em;
   padding: 1em;
 }
@@ -120,4 +121,9 @@ a {
 .button,
 input {
   background-color: $navajowhite;
+  color: $white;
+}
+
+.field {
+  line-height: 1;
 }
