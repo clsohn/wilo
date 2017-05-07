@@ -3,7 +3,8 @@ class Api::V1::UsersController < ApplicationController
 
   def create
     user = current_user
-    location = Location.find_or_create_by(city: fetch_params['city'], state: fetch_params['homeState'], zip: fetch_params['zip'])
+    location = Location.find_or_create_by(city: fetch_params['city'],
+          state: fetch_params['homeState'], zip: fetch_params['zip'])
     if user.update(phone_number: fetch_params['phoneNumber'])
       UsersLocation.new(user: user, location: location)
       render json: {

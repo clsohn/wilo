@@ -42,8 +42,7 @@ p {
   font-size: 25px;
 }
 
-h1,
-{
+h1 {
   color: $lightblue;
   font-weight: bold;
   text-align: center;
@@ -58,9 +57,9 @@ h3 {
   text-align: center;
 }
 
-.instruction{
-  font-size: 1.5em;
+.instruction {
   color: $brown;
+  font-size: 1.5em;
   margin: 0 1em;
   text-align: center;
 }
