@@ -2,18 +2,15 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 
 $lightblue: #dbecec;
-$darkslategrey: #2b3149;
+$darkslategrey: #4c4857;
+$darkslategreylight: rgba(43, 49, 73, 0.8);
+$darkslategreytransparent: rgba(43, 49, 73, 0.5);
 $navajowhite: rgba(211, 155, 104, 0.8);
-$navajowhitetransparent: rgba(211, 155, 104, 0.5);
-$darkerbrown: #6b544a;
-$brown: rgba(132, 103, 91, 0.8);
-$browntransparent: rgba(132, 103, 91, 0.5);
 $white: #fff;
 $black: #000000;
 
 body {
   background: image-url("pexels-photo-305937.jpg") no-repeat center center fixed;
-  background-size: cover;
 }
 
 p {
@@ -22,9 +19,20 @@ p {
   padding: 1em;
 }
 
+label{
+  color: $black;
+  font-size: 1em;
+}
+
+a {
+  background-color: transparent;
+  color: $darkslategrey;
+  font-size: 1em;
+}
+
 .notice,
 .alert {
-  color: $lightblue;
+  color: $darkslategrey;
   margin: 0;
   padding: 0;
 }
@@ -36,9 +44,12 @@ p {
   font-style: italic;
   font-weight: bold;
   text-align: center;
+  text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+             0px 8px 13px rgba(0,0,0,0.1),
+             0px 18px 23px rgba(0,0,0,0.1);
 }
 
-.top-bar {
+header {
   background-color: transparent;
   font-family: 'Lato', sans-serif;
   font-size: 25px;
@@ -48,6 +59,9 @@ h1 {
   color: $lightblue;
   font-weight: bold;
   text-align: center;
+  text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+             0px 8px 13px rgba(0,0,0,0.1),
+             0px 18px 23px rgba(0,0,0,0.1);
 }
 
 h2,
@@ -57,29 +71,32 @@ h3 {
   font-weight: bold;
   margin: 0 1em;
   text-align: center;
+  text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+             0px 8px 13px rgba(0,0,0,0.1),
+             0px 18px 23px rgba(0,0,0,0.1);
 }
 
 .instruction {
-  color: $darkerbrown;
+  color: $white;
   font-size: 1.5em;
   margin: 0 1em;
   text-align: center;
+  text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+             0px 8px 13px rgba(0,0,0,0.1),
+             0px 18px 23px rgba(0,0,0,0.1);
+}
+
+.instruction a {
+  color: $black;
 }
 
 .sign-header {
   font-family: 'Lato', sans-serif;
 }
 
-label,
-a {
-  background-color: transparent;
-  color: $darkslategrey;
-  font-size: 1em;
-}
-
 .notice,
 .alert  {
-  color: $lightblue;
+  color: $darkslategrey;
   font-size: 20px;
 }
 
@@ -88,19 +105,18 @@ a {
   text-align: center;
 }
 
-.container {
+.box {
   display: inline-block;
-  margin: auto;
 }
 
 .blockhead {
-  background: $brown;
+  background: $darkslategreylight;
   padding: 20px;
   text-align: left;
 }
 
 .blockbody {
-  background: $browntransparent;
+  background: $darkslategreytransparent;
   color: $white;
   margin: 0;
   padding: 45px;
@@ -123,8 +139,15 @@ a {
 input {
   background-color: $navajowhite;
   color: $white;
+  padding: .5em;
 }
 
 .field {
   line-height: 1;
+}
+
+.top-bar {
+  background-color: transparent;
+  font-size: 1.5em;
+  text-align: right;
 }
