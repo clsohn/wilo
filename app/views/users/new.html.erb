@@ -1,0 +1,14 @@
+<div class="title">What's it like out?</div>
+<h2>Be prepared for the day's weather</h2>
+<% if user_signed_in? %>
+  <div class="jumbotron">
+    <div class="container">
+      <div class="blockhead">
+        <h3></h3>
+      </div>
+      <div class="blockbody">
+        <h2> <%= @message.middle %> </h2>
+      </div>
+    </div>
+  </div>
+<% end %>

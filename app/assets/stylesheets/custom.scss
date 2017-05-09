@@ -5,6 +5,7 @@ $lightblue: #dbecec;
 $darkslategrey: #2b3149;
 $navajowhite: rgba(211, 155, 104, 0.8);
 $navajowhitetransparent: rgba(211, 155, 104, 0.5);
+$darkerbrown: #6b544a;
 $brown: rgba(132, 103, 91, 0.8);
 $browntransparent: rgba(132, 103, 91, 0.5);
 $white: #fff;
@@ -59,7 +60,7 @@ h3 {
 }
 
 .instruction {
-  color: $brown;
+  color: $darkerbrown;
   font-size: 1.5em;
   margin: 0 1em;
   text-align: center;
