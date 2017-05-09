@@ -1,14 +1,25 @@
-<div class="title">What's it like out?</div>
-<h2>Be prepared for the day's weather</h2>
-<% if user_signed_in? %>
-  <div class="jumbotron">
-    <div class="container">
-      <div class="blockhead">
-        <h3></h3>
-      </div>
-      <div class="blockbody">
-        <h2> <%= @message.middle %> </h2>
+<ul class="slideshow">
+  <li><span>Image 01</span></li>
+  <li><span>Image 02</span></li>
+  <li><span>Image 03</span></li>
+  <li><span>Image 04</span></li>
+  <li><span>Image 05</span></li>
+  <li><span>Image 06</span></li>
+</ul>
+
+<div class="container">
+  <div class="title">What's it like out?</div>
+  <h2>Be prepared for the day's weather</h2>
+  <% if user_signed_in? %>
+    <div class="jumbotron">
+      <div class="box">
+        <div class="blockhead">
+          <h3></h3>
+        </div>
+        <div class="blockbody">
+          <h2> <%= @message.middle %> </h2>
+        </div>
       </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
