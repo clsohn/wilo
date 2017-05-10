@@ -32,19 +32,19 @@
     </div>
   </div>
   <h1 class="title">What's it like out?</h1>
-  <% if user_signed_in? %>
-  <h2> See today's <%= link_to "recommendation", new_user_path %> for <%= current_user.first_name %></h2>
-  <div class="jumbotron">
-    <div class="box">
-      <div class="blockhead">
-        <h3>Your current location</h3>
+    <% if user_signed_in? && @location != nil %>
+    <h2> See today's <%= link_to "recommendation", new_user_path %> for <%= current_user.first_name %></h2>
+      <div class="jumbotron">
+        <div class="box">
+          <div class="blockhead">
+            <h3>Your current location</h3>
+          </div>
+          <div class="blockbody">
+            <h2><%= @location.city %> <%= @location.state %></h2>
+          </div>
+        </div>
       </div>
-      <div class="blockbody">
-        <h2><%= @location.city %> <%= @location.state %></h2>
-      </div>
-    </div>
+    <% else %>
+      <h2>First time here? Enter your <%= link_to "Profile Info", new_location_path  %> for your personal recommendation</h2>
+    <% end %>
   </div>
-  <% else %>
-    <h3>First time here? Enter your <%= link_to "Profile Info", new_location_path  %> </h3>
-  <% end %>
-</div>
