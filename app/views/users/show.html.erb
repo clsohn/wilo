@@ -8,7 +8,31 @@
 </ul>
 
 <div class="container">
+  <div class="top-bar">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <div class="top-bar-right">
+        <ul class="menu horizontal">
+          <% if user_signed_in? %>
+            <li>
+              <%= link_to "Hi #{current_user.first_name}",
+                user_path(current_user)
+              %>
+            </li>
+            <li>
+              <%= link_to "Sign Out",
+                destroy_user_session_path, method: :delete
+              %>
+            </li>
+          <% else %>
+            <li> <%= link_to "Sign In", new_user_session_path %> </li>
+            <li> <%= link_to "Sign Up", new_user_registration_path %> </li>
+          <% end %>
+        </ul>
+    </div>
+  </div>
   <h1 class="title">What's it like out?</h1>
+  <% if user_signed_in? %>
   <h2> See today's <%= link_to "recommendation", new_user_path %> for <%= current_user.first_name %></h2>
   <div class="jumbotron">
     <div class="box">
@@ -20,4 +44,7 @@
       </div>
     </div>
   </div>
+  <% else %>
+    <h3>First time here? Enter your <%= link_to "Profile Info", new_location_path  %> </h3>
+  <% end %>
 </div>

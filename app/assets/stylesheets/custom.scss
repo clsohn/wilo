@@ -32,7 +32,8 @@ a {
 
 .notice,
 .alert {
-  color: $darkslategrey;
+  color: $lightblue;
+  font-size: 1em;
   margin: 0;
   padding: 0;
 }
@@ -76,28 +77,8 @@ h3 {
              0px 18px 23px rgba(0,0,0,0.1);
 }
 
-.instruction {
-  color: $white;
-  font-size: 1.5em;
-  margin: 0 1em;
-  text-align: center;
-  text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
-             0px 8px 13px rgba(0,0,0,0.1),
-             0px 18px 23px rgba(0,0,0,0.1);
-}
-
-.instruction a {
-  color: $black;
-}
-
 .sign-header {
   font-family: 'Lato', sans-serif;
-}
-
-.notice,
-.alert  {
-  color: $darkslategrey;
-  font-size: 20px;
 }
 
 .jumbotron {
