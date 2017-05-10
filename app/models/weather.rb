@@ -5,7 +5,9 @@ class Weather
   def initialize(temp, condition, wspd, humidity, snow, location)
 
     @location = location
-    response = HTTParty.get("http://api.wunderground.com/api/ce0783e06625adc3/hourly/q/#{@location.state}/#{@location.city}.json")
+    newCity = @location.city
+    @city = newCity.gsub(' ', '_')
+    response = HTTParty.get("http://api.wunderground.com/api/ce0783e06625adc3/hourly/q/#{@location.state}/#{@city}.json")
     data = response.parsed_response
     @temp = data["hourly_forecast"][0]["temp"]["english"]
     @condition = data["hourly_forecast"][0]["condition"]
