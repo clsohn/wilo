@@ -38,10 +38,10 @@ q:before,q:after {
     z-index: 0;
 }
 
-.slideshow:after {
-    content: '';
-    background: transparent url(../images/pattern.png) repeat top left;
-}
+// .slideshow:after {
+//     content: '';
+//     background: transparent url(../images/pattern.png) repeat top left;
+// }
 
 .slideshow li span {
     width: 100%;
