@@ -34,6 +34,6 @@
   <div class="title">What's it like out?</div>
   <h2>Be prepared for the day's weather</h2>
   <% if !user_signed_in? %>
-    <h2>First time here? <%= link_to "Sign up", new_user_registration_path  %> for your personal recommendation</h2>
+    <h2>First time here? <span><%= link_to "Sign up", new_user_registration_path  %></span> for your personal recommendation</h2>
   <% end %>
 </div>
