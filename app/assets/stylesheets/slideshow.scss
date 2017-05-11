@@ -19,12 +19,12 @@ q:before,q:after {
 	overflow:hidden;
 }
 
-.container{
+.container {
 	position: relative;
 	text-align: center;
 }
 
-.clr{
+.clr {
 	clear: both;
 }
 
@@ -37,11 +37,6 @@ q:before,q:after {
     left: 0px;
     z-index: 0;
 }
-
-// .slideshow:after {
-//     content: '';
-//     background: transparent url(../images/pattern.png) repeat top left;
-// }
 
 .slideshow li span {
     width: 100%;
