@@ -85,28 +85,28 @@ handleSendForm(payload){
 
         <TextField
             content={this.state.city}
-            label='City:'
+            label='City'
             name='city'
             handlerFunction={this.handleCityChange}
         />
 
         <TextField
             content={this.state.homeState}
-            label='State:'
+            label='State (Two letter abbreviation)'
             name='homeState'
             handlerFunction={this.handleHomeStateChange}
         />
 
         <TextField
             content={this.state.zip}
-            label='Zip Code:'
+            label='Zip Code'
             name='zip'
             handlerFunction={this.handleZipChange}
           />
 
         <TextField
             content={this.state.phoneNumber}
-            label='Phone Number:'
+            label='Phone Number'
             name='phoneNumber'
             handlerFunction={this.handlePhoneNumberChange}
           />
