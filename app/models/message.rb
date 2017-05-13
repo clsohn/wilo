@@ -10,7 +10,7 @@ class Message
       return "It's gonna get really hot today, wear shorts if you can"
     elsif @weather.temp.to_i > 70 && @weather.temp.to_i < 84
       return "It's pretty warm out"
-    elsif @weather.temp.to_i > 45 && @weather.temp.to_i < 60
+    elsif @weather.temp.to_i >= 45 && @weather.temp.to_i < 60
       return "It's a little chilly, wear layers"
     elsif @weather.temp.to_i > 20 && @weather.temp.to_i < 45
       return "It's so cold out, wear your jacket and bring gloves"
@@ -42,9 +42,9 @@ class Message
   def snow
     if @weather.snow.to_i > 0 && @weather.snow.to_i < 4
       return "There's gonna be some snow, stay warm"
-    elsif @weather.snow.to_i > 4 && @weather.snow.to_i < 8
+    elsif @weather.snow.to_i >= 4 && @weather.snow.to_i < 8
       return "Snow day! Wear your boots and bundle up"
-    elsif @weather.snow.to_i > 8
+    elsif @weather.snow.to_i >= 8
       return "Gonna be a lot of snow! Stock supplies and stay home!"
     else
       return ""
