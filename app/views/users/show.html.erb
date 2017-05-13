@@ -31,7 +31,7 @@
         </ul>
     </div>
   </div>
-  <h1 class="title">What's it like out?</h1>
+  <div class="title">What's it like out?</div>
     <% if user_signed_in? && @location != nil %>
     <h2> See today's <span><%= link_to "recommendation", new_user_path %></span> for <%= current_user.first_name %></h2>
       <div class="jumbotron">
