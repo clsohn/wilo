@@ -15,8 +15,10 @@ before_action :authorize_user, only: [:edit, :update, :show]
     user_locations = UsersLocation.where(user: @user)
     ul = user_locations.pluck(:location_id)
     @location = Location.where(id: ul).last
-    @weather = Weather.new(@temp, @condition, @wspd, @humidity, @snow, @location)
-    @message = Message.new(@weather)
+    if @location != nil
+      @weather = Weather.new(@temp, @condition, @wspd, @humidity, @snow, @location)
+      @message = Message.new(@weather)
+    end
   end
 
   def authorize_user
