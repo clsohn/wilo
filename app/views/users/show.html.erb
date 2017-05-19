@@ -43,9 +43,10 @@
             <h2><%= @location.city %> <%= @location.state %></h2>
           </div>
         </div>
+        <h2>Going on a trip? Change your <span><%= link_to "location!", new_location_path %></span></h2>
       </div>
     <% else %>
       <h2>First time here? Enter your <span><%= link_to "Profile Info", new_location_path  %></span> for your personal recommendation</h2>
     <% end %>
-    <p><%= link_to "Edit your account", edit_user_registration_path %></p>
+    <h4><%= link_to "Change your email or password", edit_user_registration_path %></h4>
   </div>
