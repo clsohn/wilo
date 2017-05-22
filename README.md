@@ -7,18 +7,22 @@
 
 
 # What's it like out?
-Heroku link https://whatsitlikeout.herokuapp.com/
+[Heroku Page] (https://whatsitlikeout.herokuapp.com/)
 
 An app to prepare you for the day's weather. Enter your city and get a message telling you what clothing or weather specific gear (umbrella, snow boots, etc.) you'll need.
 
-### Installing and Running
+## Installing and Running
 
-clone repo
-bundle install
-npm start
-rails s
+`clone repo`
+
+`bundle install`
+
+`npm start`
+
+`rails s`
 
 ## Built With
 
-Ruby on Rails
-React.js
+`Ruby on Rails`
+
+`React.js`
