@@ -14,11 +14,15 @@ An app to prepare you for the day's weather. Enter your city and get a message t
 ### Installing and Running
 
 clone repo
+
 bundle install
+
 npm start
+
 rails s
 
 ## Built With
 
 Ruby on Rails
+
 React.js
