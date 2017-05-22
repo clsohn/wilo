@@ -6,25 +6,19 @@
 
 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# What's it like out?
+Heroku link https://whatsitlikeout.herokuapp.com/
 
-Things you may want to cover:
+An app to prepare you for the day's weather. Enter your city and get a message telling you what clothing or weather specific gear (umbrella, snow boots, etc.) you'll need.
 
-* Ruby version
+### Installing and Running
 
-* System dependencies
+clone repo
+bundle install
+npm start
+rails s
 
-* Configuration
+## Built With
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Ruby on Rails
+React.js
