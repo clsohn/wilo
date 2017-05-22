@@ -1,16 +1,21 @@
 import React, { Component } from 'react';
 import TextField from '../components/TextField';
+import Select from '../components/Select';
 
 class FormContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
       city: '',
-      homeState: '',
+      homeStateOptions: ['AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI',
+                        'ID','IL','IN','IA','KS','KY','LA','ME','MD','MA','MI',
+                        'MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC',
+                        'ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT',
+                        'VT','VA','WA','WV','WI','WY'],
       zip: '',
-      phoneNumber: '',
-
+      phoneNumber: ''
     };
+
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.handleCityChange = this.handleCityChange.bind(this);
     this.handleHomeStateChange = this.handleHomeStateChange.bind(this);
@@ -90,12 +95,13 @@ handleSendForm(payload){
             handlerFunction={this.handleCityChange}
         />
 
-        <TextField
-            content={this.state.homeState}
-            label='State (Two letter abbreviation)'
+        <Select
+            label='State'
             name='homeState'
             handlerFunction={this.handleHomeStateChange}
-        />
+            options={this.state.homeStateOptions}
+            selectedOption={this.state.homeState}
+          />
 
         <TextField
             content={this.state.zip}
