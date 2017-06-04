@@ -5,7 +5,7 @@ feature "Sign up" do
   # I want to create an account
   # So that I can specify my location
 
-  xscenario "Specifying valid and required information" do
+  scenario "Specifying valid and required information" do
     visit root_path
     click_link 'Sign Up'
     fill_in 'First Name', with: 'Lynn'
@@ -13,7 +13,7 @@ feature "Sign up" do
     fill_in 'Password', with: 'password123'
     fill_in 'Password confirmation', with: 'password123'
     fill_in 'Email', with: 'lsimpson@yahoo.com'
-    click_button 'Sign Up'
+    click_button 'Sign up'
 
     expect(page).to have_content "Welcome! You have signed up successfully."
     expect(page).not_to have_content "Sign Up"
@@ -21,10 +21,10 @@ feature "Sign up" do
     expect(page).to have_content "Sign Out"
   end
 
-  xscenario "User omits required information" do
+  scenario "User omits required information" do
     visit root_path
     click_link 'Sign Up'
-    click_button 'Sign Up'
+    click_button 'Sign up'
 
     expect(page).to have_content "First name can't be blank"
     expect(page).to have_content "Last name can't be blank"
@@ -32,7 +32,7 @@ feature "Sign up" do
     expect(page).to have_content "Email can't be blank"
   end
 
-  xscenario "User gives invalid information" do
+  scenario "User gives invalid information" do
     visit root_path
     click_link 'Sign Up'
     fill_in 'First Name', with: 'Lynn'
@@ -40,14 +40,13 @@ feature "Sign up" do
     fill_in 'Password', with: '123'
     fill_in 'Password confirmation', with: '321'
     fill_in 'Email', with: 'lsimpson@yhoos'
-    click_button 'Sign Up'
+    click_button 'Sign up'
 
-    expect(page).to have_content "Password is too short (minimum is 7 characters)"
+    expect(page).to have_content "Password is too short (minimum is 6 characters)"
     expect(page).to have_content "Password confirmation doesn't match Password"
-    expect(page).to have_content "Email is not a valid email address"
   end
 
-  xscenario "User gives email address that already has an account" do
+  scenario "User gives email address that already has an account" do
     user = FactoryGirl.create(:user)
 
     visit root_path
@@ -57,7 +56,7 @@ feature "Sign up" do
     fill_in 'Password', with: user.password
     fill_in 'Password confirmation', with: user.password
     fill_in 'Email', with: user.email
-    click_button 'Sign Up'
+    click_button 'Sign up'
 
     expect(page).to have_content "An account already exists for that email address!"
   end
@@ -68,17 +67,17 @@ feature "sign out" do
   # I want to sign out
   # So that no one else can see my info
 
-  xscenario "successful sign out" do
+  scenario "successful sign out" do
     user = FactoryGirl.create(:user)
 
     visit root_path
     click_link 'Sign In'
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password
-    click_button 'Sign In'
+    click_button 'Sign in'
 
     click_link "Sign Out"
 
-    expect(page).to have_content "You have been signed out"
+    expect(page).to have_content "Signed out successfully"
   end
 end
