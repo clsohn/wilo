@@ -9,6 +9,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'foundation-rails'
 gem 'httparty'
+gem 'jquery-slick-rails'
 
 group :development do
   gem 'listen', '~> 3.0.5'
