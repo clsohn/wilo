@@ -10,6 +10,9 @@
 
 An app to prepare you for the day's weather. Enter your city and get a message telling you what clothing or weather specific gear (umbrella, snow boots, etc.) you'll need.
 
+Log in: test@testemail.com
+Password: 123456
+
 ## Installing and Running
 
 `clone repo`
