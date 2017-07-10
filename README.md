@@ -8,11 +8,10 @@
 # What's it like out?
 [Heroku Page](https://whatsitlikeout.herokuapp.com/)
 
-An app to prepare you for the day's weather. Enter your city and get a message telling you what clothing or weather specific gear (umbrella, snow boots, etc.) you'll need.
-
-Log in: test@testemail.com
-
+Log in: test@testemail&#46;com
 Password: 123456
+
+An app to prepare you for the day's weather. Enter your city and get a message telling you what clothing or weather specific gear (umbrella, snow boots, etc.) you'll need.
 
 ## Installing and Running
 
