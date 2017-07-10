@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
 before_action :authorize_user, only: [:edit, :update, :show]
+before_action :set_location
 
-  def index; end
+  def index
+    @weather = Weather.new(@temp, @condition, @wspd, @humidity, @snow, @location)
+    @message = Message.new(@weather)
+  end
 
   def show
     @user = User.find(params[:id])
@@ -19,6 +23,10 @@ before_action :authorize_user, only: [:edit, :update, :show]
       @weather = Weather.new(@temp, @condition, @wspd, @humidity, @snow, @location)
       @message = Message.new(@weather)
     end
+  end
+
+  def set_location
+    @location ||= Location.new(city: "Boston", state: "MA", zip: 02111)
   end
 
   def authorize_user

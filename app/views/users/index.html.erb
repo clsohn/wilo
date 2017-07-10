@@ -33,6 +33,11 @@
   </div>
   <div class="title">What's it like out?</div>
   <h2>Be prepared for the day's weather</h2>
+  <div class="jumbotron">
+    <div class="box">
+        <%= render "users/message" %>
+    </div>
+  </div>
   <% if user_signed_in? %>
     <h2> See today's <span><%= link_to "recommendation", new_user_path %></span> for <%= current_user.first_name %></h2>
   <% else %>
