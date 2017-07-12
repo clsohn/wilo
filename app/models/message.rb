@@ -7,7 +7,7 @@ class Message
 
   def temp
     if @weather.temp.to_i >= 85
-      return "It's gonna get really hot, get out the shorts!"
+      return "It's gonna get really hot! Wear shorts and drink water"
     elsif @weather.temp.to_i > 70 && @weather.temp.to_i < 84
       return "It's pretty warm out, dress light"
     elsif @weather.temp.to_i >= 45 && @weather.temp.to_i < 60

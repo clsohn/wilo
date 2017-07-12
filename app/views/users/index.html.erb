@@ -36,7 +36,7 @@
   <% if user_signed_in? %>
     <h2> See today's <span><%= link_to "recommendation", new_user_path %></span> for <%= current_user.first_name %></h2>
   <% else %>
-  <h2>First time here? <span><%= link_to "Sign up", new_user_registration_path  %></span> for your personal recommendation</h2>
+  <h2>First time here? <span><%= link_to "Sign up", new_user_registration_path  %></span> for your local recommendation</h2>
     <div class="jumbotron">
       <div class="box">
           <%= render "users/message" %>
